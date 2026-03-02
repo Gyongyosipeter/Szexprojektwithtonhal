@@ -1,8 +1,31 @@
-body{
-    background-image: url(szabo_marta_9eb7f3fce4.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; /* Ensures full image is visible */
+body {
+    margin: 0;
+    overflow: hidden;
 }
 
 
+body::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background-image: url(szabo_marta_9eb7f3fce4.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /* Shows full image */
+    transform: translate(-50%, -50%);
+    animation: spin 10s linear infinite;
+    z-index: -1;
+}
+
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
